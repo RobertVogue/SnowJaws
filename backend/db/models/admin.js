@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Admin.associate = function(models) {
-    // associations can be defined here
+    Admin.belongsTo(models.User, { foreignKey: 'userId' });
+    Admin.belongsTo(models.Spot, { foreignKey: 'spotId' });
   };
   return Admin;
 };
