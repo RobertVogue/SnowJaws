@@ -1,18 +1,13 @@
 const ADMIN = 'admin/ADMIN';
-const STOPADMIN = 'admin/STOPADMIN';
 
 export const admin = (adm) => ({
     type: ADMIN,
     adm
 });
 
-export const stopAdmin = () => ({
-    type: STOPADMIN
-});
+const initial = [];
 
-const initialState = [];
-
-const adminReducer = (state = initialState, action) => {
+const adminReducer = (state = initial, action) => {
     switch (action.type) {
         case ADMIN:
             return [action.admin];
