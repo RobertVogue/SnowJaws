@@ -13,6 +13,7 @@ router.get('/',
       order: [['id', 'ASC']]
     });
     res.json({ spots });
+
   })
 );
 router.get('/reviews',
@@ -32,51 +33,51 @@ router.get('/reviews',
 router.get('/:id',
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const spot = await Spot.findByPk(id);
-    res.json({ spot });
+    const spots = await Spot.findByPk(id);
+    res.json({ spots });
   })
 );
 router.get('/:id/reviews',
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const spot = await Spot.findByPk(id, {
+    const spots = await Spot.findByPk(id, {
       include: [
         { model: Review, include: { model: User } },
         { model: User, through: Admin }
       ],
     });
-    res.json({ spot });
+    res.json({ spots });
   })
 );
 
 router.post('/',
   requireAuth,
   asyncHandler(async (req, res, next) => {
-    const spotDataObj = req.body.spot;
-    if (req.user.id !== spotDataObj.userId) {
-      return next(serverError(401, 'Admin creating failed', ["Unauthorized user"]));
+    const dataObj = req.body.spot;
+    if (req.user.id !== dataObj.userId) {
+      return next(serverError(401, 'Admin Error', ["Unauthorized user"]));
     }
-    delete spotDataObj.userId;
+    delete dataObj.userId;
     try {
-      let spot = await Spot.create(spotDataObj);
+      let spots = await Spot.create(dataObj);
       let err;
       let admin;
       try {
         admin = await Admin.build({ userId: req.user.id, spotId: spot.id });
         await admin.save();
       } catch (e) {
-        return next(serverError(401, 'Admin creating failed', ["Could not create admin"]));
+        return next(serverError(401, 'Admin Error', ["Cancelled"]));
       }
-      spot = await Spot.findByPk(spot.id, {
+      spots = await Spot.findByPk(spots.id, {
         include: [
           { model: Review, include: { model: User } },
           { model: User, through: Admin }
         ],
       })
-      let returnJson = { spot };
-      if (admin) returnJson.admin = admin;
-      if (err) returnJson.error = err;
-      res.json(returnJson);
+      let ret = { spots };
+      if (admin) ret.admin = admin;
+      if (err) ret.error = err;
+      res.json(ret);
     } catch (error) {
       return next(serverError(401, 'Admin creating failed', ["Could not create admin", error]));
     }

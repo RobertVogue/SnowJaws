@@ -11,7 +11,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     authLinks = (
       <>
-      <NavLink className="link" to="/users"> My Plans</NavLink>
+      <NavLink className="link" to="/spot"> Spots</NavLink>
       </>
     )
   }
