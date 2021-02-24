@@ -5,7 +5,19 @@
     height: 3vh;
     color: white;
     padding-right: 50px;
+    border: none;
 
+}
+.pic {
+    background-image: url('../../images/nav2.png');
+    width: 100%;
+
+
+}
+@media only screen and (max-width: 750px) {
+.pic {
+    background-image: url('../../images/SJSmall.png');
+}
 }
 
 .link {
@@ -25,9 +37,10 @@
     display: flex;
     justify-content: space-between;
     background-color: black;
-    height: 12vh;
-    width: 99vw;
+    height: 19vh;
+    width: 100%;
     color: white;
+    border: none;
 
 }
 .name {
