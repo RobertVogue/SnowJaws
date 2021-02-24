@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
+import SpotsPage from "./components/spot";
 import * as sessionActions from "./store/session";
 
 import Navigation from "./components/Navigation";
@@ -16,6 +17,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+
   return (
     <div className='page'>
       <Navigation isLoaded={isLoaded} />
@@ -27,14 +29,12 @@ function App() {
           <Route path="/login">
             <LoginFormPage />
           </Route>
-
-          <Route >
-          <div>
-            <h4>Page Hiding</h4>
-          </div>
-        </Route>
+          <Route path="/spots">
+            <SpotsPage />
+          </Route>
         </Switch>
       )}
+      
     </div>
   );
 }
