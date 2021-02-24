@@ -19,7 +19,11 @@ function LoginForm() {
       }
     );
   };
-
+  const handleDemoClick = e => {
+    // e.preventDefault(); // no preventing default so we will login immediately
+    setCredential('Demo');
+    setPassword('password');
+  }
   return (
     <div className='outerbest'>
         <div className='form'>
@@ -49,6 +53,7 @@ function LoginForm() {
                 </div>
                 <div>
                 <button type="submit">Log In</button>
+                <button className="button button-invite" onClick={handleDemoClick}>Demo</button>
                 </div>
                 <div>
                     <ul>

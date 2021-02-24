@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const spotsRouter = require('./spots.js');
-const bookingsRouter = require('./bookings.js');
-const reviewsRouter = require('./reviews.js');
+const spotsRouter = require('./spot.js');
+const bookingsRouter = require('./booking.js');
+const reviewsRouter = require('./review.js');
 
 
 router.use('/session', sessionRouter);

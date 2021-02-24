@@ -7,28 +7,36 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
-
+  let authLinks;
+  if (sessionUser) {
+    authLinks = (
+      <>
+      <NavLink className="link" to="/users"> My Plans</NavLink>
+      </>
+    )
+  }
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton className="link" user={sessionUser} />
+      <ProfileButton user={sessionUser} />
     );
   } else {
     sessionLinks = (
       <>
         <LoginFormModal />
         <NavLink className="link" to="/signup">Sign Up</NavLink>
-        <NavLink className="link" to="/signup">Spots</NavLink>
-        <NavLink className="link" to="/signup">About</NavLink>
       </>
     );
   }
 
   return (
     <div className='outer'>
-        <img className="pic" src="https://i.postimg.cc/xC6ND41H/background-nav2.png"/>
+        <div className="pic">
+
+        </div>
             <div className='box'>
                 <NavLink className="link" exact to="/">Home</NavLink>
+                {authLinks}
                 {isLoaded && sessionLinks}
             </div>
     </div>
