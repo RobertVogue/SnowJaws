@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <div className='page'>
+    <div className="back2">
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -32,9 +32,10 @@ function App() {
           <Route path="/spots">
             <SpotsPage />
           </Route>
+          
         </Switch>
       )}
-      
+
     </div>
   );
 }

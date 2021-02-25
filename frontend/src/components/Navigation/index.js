@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const [user, setUser] = useState(sessionUser);
+
   let authLinks;
   if (sessionUser) {
     authLinks = (
       <>
-      <NavLink className="link" to="/spot"> Spots</NavLink>
+      <NavLink className="link" to="/spots"> Spots</NavLink>
+      <NavLink className="link" to="/reviews"> Reviews</NavLink>
       </>
     )
   }
+ 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (

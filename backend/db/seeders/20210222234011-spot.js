@@ -12,7 +12,7 @@ module.exports = {
         gladed terrain in Blue Sky Basin.",
         units: 345,
         tracker: [39.6061, -106.3550],
-        URL: "https://www.google.com/maps/uv?pb=!1s0x876a7060c630dbdb:0xa7c2cf2d4b45ada2!3m1!7e115!4shttps://lh5.googleusercontent.com/p/AF1QipPMQcDCYWcpeMcWHZVE3LGa5ftU__iffkpLLMRq%3Dw284-h160-k-no!5svail+ski+resort+4+digit+address+-+Google+Search!15zQ2dJZ0FRPT0&imagekey=!1e10!2sAF1QipPMQcDCYWcpeMcWHZVE3LGa5ftU__iffkpLLMRq&hl=en&sa=X&ved=2ahUKEwiLqsf74f7uAhUUJzQIHYBPCGcQoiowD3oECCEQAw",
+        urlLink: "https://www.google.com/maps/uv?pb=!1s0x876a7060c630dbdb:0xa7c2cf2d4b45ada2!3m1!7e115!4shttps://lh5.googleusercontent.com/p/AF1QipPMQcDCYWcpeMcWHZVE3LGa5ftU__iffkpLLMRq%3Dw284-h160-k-no!5svail+ski+resort+4+digit+address+-+Google+Search!15zQ2dJZ0FRPT0&imagekey=!1e10!2sAF1QipPMQcDCYWcpeMcWHZVE3LGa5ftU__iffkpLLMRq&hl=en&sa=X&ved=2ahUKEwiLqsf74f7uAhUUJzQIHYBPCGcQoiowD3oECCEQAw",
         firstAddress: "",
         secondAddress: "",
         city: 'Vail',

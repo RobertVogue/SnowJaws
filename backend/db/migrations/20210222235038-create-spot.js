@@ -22,7 +22,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 1
       },
-      URL: {
+      urlLink: {
         type: Sequelize.TEXT,
         allowNull: true,
       },

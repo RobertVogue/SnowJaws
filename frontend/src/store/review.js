@@ -1,29 +1,28 @@
-import fetch from './csrf';
+import csrfFetch from './csrf';
 
-const REVIEW = 'review/REVIEW';
+const REVIEW = 'review/review';
 
 const review = (rev) => ({
     type: REVIEW,
     rev
 });
 
-export const getReview = (id) => async dispatch => {
-    const res = await fetch(`/api/review/${id}`);
-    if (res.ok) {
-        const retRev = res.data.review;
-        dispatch(review(retRev));
+export const getReview = (id) => {
+    return async (dispatch) => {
+        const res = await csrfFetch(`/api/review/${id}`);
+        const data = await res.json();
+        dispatch(review(data.review));
+        return data;
     }
-    return res;
 }
 
-const initial = [];
-const reviewReducer = (state = initial, action) => {
-    let newState;
+const alpha = [];
+const reviewReducer = (state = alpha, action) => {
+    let beta;
     switch (action.type) {
         case REVIEW:
-            newState = JSON.parse(JSON.stringify(state));
-            newState.push(JSON.parse(JSON.stringify(action.review)));
-            return newState;
+            beta = [...state, ...action.review]
+            return beta;
         default:
             return state;
     }

@@ -30,30 +30,30 @@ function LoginForm() {
             <form onSubmit={handleSubmit}>
                 <h2>Welcome Back to SnowJaws</h2>
                 <div>
-                    <label className="box3">
+                    <label>
                     Username
-                    <input className="box4"
+                    </label>
+                    <input
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
                     required
                     />
-                    </label>
                 </div>
                 <div>
-                    <label className="box3">
+                    <label>
                     Password
-                    <input className="box4"
+                    </label>
+                    <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
-                    </label>
                 </div>
                 <div>
                 <button type="submit">Log In</button>
-                <button className="button button-invite" onClick={handleDemoClick}>Demo</button>
+                <button onClick={handleDemoClick}>Demo</button>
                 </div>
                 <div>
                     <ul>

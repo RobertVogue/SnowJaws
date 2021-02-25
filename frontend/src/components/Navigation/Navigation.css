@@ -13,10 +13,12 @@
     width: 100%;
 
 
+
 }
 @media only screen and (max-width: 750px) {
 .pic {
     background-image: url('../../images/SJSmall.png');
+    background-repeat: no-repeat;
 }
 }
 

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 1
     },
-    URL: {
+    urlLink: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
