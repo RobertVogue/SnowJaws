@@ -16,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 1
     },
     urlLink: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: true,
+      defaultValue: 0,
     },
     tracker: {
       type: DataTypes.ARRAY(DataTypes.DOUBLE),

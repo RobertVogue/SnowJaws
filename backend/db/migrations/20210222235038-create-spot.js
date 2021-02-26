@@ -23,8 +23,9 @@ module.exports = {
         defaultValue: 1
       },
       urlLink: {
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       tracker: {
         type: Sequelize.ARRAY(Sequelize.DOUBLE),

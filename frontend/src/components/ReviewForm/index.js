@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { fetchSpots, addReview } from "../../store/spot";
+import { FetchSpots, addReview } from "../../store/spot";
+import RadioSelector from "./RadioSelector";
 
 
 const ReviewForm = () => {
@@ -14,12 +15,11 @@ const ReviewForm = () => {
     const {spotId} = useParams();
     const sessionUser = useSelector((state) => state.session.user);
     const spot = useSelector((state) => state.spots);
-    const spotName = spot.filter(
-    (sp) => sp.id.toString() === spotId.toString());
 
-    const updateReview = (e) => setReview(e.target.value);
+
+    const updateReview = (e) => setBody(e.target.value);
     useEffect(() => {
-      dispatch(fetchSpots());
+    dispatch(FetchSpots());
     }, [dispatch]);
 
     const handleSubmit = async (e) => {
@@ -30,7 +30,7 @@ const ReviewForm = () => {
             threeRating,
             publicVote
         };
-        if (newReview) {
+        if (startReview) {
             let userId = sessionUser.id;
             dispatch(addReview(startReview, spotId, userId));
 
@@ -43,12 +43,57 @@ const ReviewForm = () => {
         <div className="reviewContainers">
             <h1>
             {sessionUser.username.toUpperCase()},
-            <p>How was your trip at {spotName[0].head}</p>
+            <p>How was your trip at </p>
             </h1>
+            <div>
+            <form>
+                <div>
+                <label className="box22">
+                    Title:
+                    </label>
+                    <input
+                    className="box22"
+                    type="text"
+                    value={head}
+                    onChange={(e) => setHead(e.target.value)}
+                    required
+                    />
+                </div>
+                <div>
+                <label className="box22">
+                    Review
+                    </label>
+                    <input
+                    className="box22"
+                    type="textfield"
+                    value={body}
+                    onChange={updateReview}
+                    required
+                    />
+                </div>
+                <div>
+                <RadioSelector
+                label="Rating"
+                count={3}
+                checked={threeRating}
+                onChange={setThreeRating}
+                />
+                </div>
+                <div>
+                <RadioSelector
+                label="General Location Rating"
+                count={5}
+                checked={publicVote}
+                onChange={setPublicVote}
+                />
+                </div>
+                <div>
+                <button onClick={handleSubmit} className="login_button1" type="submit">Submit Review</button>
+                </div>
+            </form>
+            </div>
         </div>
         )
     );
-
 };
-
 export default ReviewForm

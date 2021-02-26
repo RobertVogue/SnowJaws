@@ -1,35 +1,33 @@
-
-.box {
+.shield {
     display: flex;
-    background-color: black;
-    height: 3vh;
-    color: white;
-    padding-right: 50px;
-    border: none;
-
-}
-.pic {
-    background-image: url('../../images/nav2.png');
+    flex-direction: row;
+    justify-content: space-between;
+    height: 6vh;
     width: 100%;
+}
+.icon {
+    height: 5vh;
+    background-color: blue;
+    width: 20%;
+    position: fixed;
+    color: black;
+}
 
 
 
-}
-@media only screen and (max-width: 750px) {
-.pic {
-    background-image: url('../../images/SJSmall.png');
-    background-repeat: no-repeat;
-}
-}
+
+
 
 .link {
     text-decoration: none;
-    color: white;
+    color: black;
     height: 2vh;
     margin-top: 15px;
     width: 75px;
     text-align: center;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
+    font-weight: bolder;
+
 }
 .link:hover {
     cursor: pointer;
@@ -37,19 +35,14 @@
 }
 .outer {
     display: flex;
-    justify-content: space-between;
-    background-color: black;
-    height: 19vh;
+    flex-direction: row;
+    justify-content:flex-end;
+    background-color: white;
+    height: 5vh;
     width: 100%;
     color: white;
     border: none;
+    position: fixed;
 
-}
-.name {
-    display: flex;
-    font-size: 50px;
-    text-align: center;
-    align-self: inherit;
-    justify-content: center;
-    height: 7vh;
+
 }

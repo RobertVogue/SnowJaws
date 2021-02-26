@@ -1,14 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+// import ReviewFormModal from '../ReviewForm'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
-  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const [user, setUser] = useState(sessionUser);
 
   let authLinks;
   if (sessionUser) {
@@ -19,7 +18,7 @@ function Navigation({ isLoaded }){
       </>
     )
   }
- 
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -36,15 +35,11 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='outer'>
-        <div className="pic">
-
-        </div>
-            <div className='box'>
                 <NavLink className="link" exact to="/">Home</NavLink>
                 {authLinks}
                 {isLoaded && sessionLinks}
-            </div>
     </div>
+
   );
 }
 
