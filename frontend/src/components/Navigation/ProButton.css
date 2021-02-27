@@ -4,17 +4,20 @@
     flex-direction: column;
     font-size: 16px;
     font-family: 'Times New Roman';
+    color: black;
+    margin-right: 30px;
 }
 
 .wpw {
     background-image: url('../../images/favicon.png');
     border-radius: 25px;
-    border: none;
+    border: 1px solid black;
     height: 30px;
     width: 30px;
     outline:0;
     margin-top: 10px;
     margin-left: 25px;
+    margin-right: 40px;
 }
 @keyframes medium {
     0% {
@@ -35,10 +38,10 @@
 .link3 {
     text-decoration: none;
     text-align: left;
-    color: white;
+    color: black;
     height: 20.74px;
     width: 55px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
     border-right: none;
     border-left: none;
     border-top: none;
@@ -46,8 +49,9 @@
     padding-right: 0px;
     padding-bottom: 0px;
     padding-top: 0px;
-    background-color: black;
-    font-size: 16px;
+    background-color: white;
+    font-size: 13px;
+    font-weight: bolder;
     font-family: 'Times New Roman';
     outline: none;
 
@@ -55,4 +59,6 @@
 .link3:hover {
     cursor: pointer;
     border-bottom: 3px solid rgb(0, 162, 255);
+    background-color: white;
+    color: black;
 }

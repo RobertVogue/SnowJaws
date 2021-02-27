@@ -13,6 +13,11 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      admin: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
       email: {
         type: Sequelize.STRING(256),
         allowNull: false,

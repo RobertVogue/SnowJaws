@@ -3,18 +3,21 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+// import ReviewFormModal from '../ReviewForm'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+
   let authLinks;
   if (sessionUser) {
     authLinks = (
       <>
-      <NavLink className="link" to="/spot"> Spots</NavLink>
+      <NavLink className="link" to="/spots"> Spots</NavLink>
       </>
     )
   }
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -31,15 +34,12 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='outer'>
-        <div className="pic">
-
-        </div>
-            <div className='box'>
+                <div className="w5"></div>
                 <NavLink className="link" exact to="/">Home</NavLink>
                 {authLinks}
                 {isLoaded && sessionLinks}
-            </div>
     </div>
+
   );
 }
 

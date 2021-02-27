@@ -7,25 +7,27 @@ const { Review } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async (reg, res) => {
-    res.json("All reviews - to be implemented");
+    res.json("Reviews");
   }));
 
   router.post('/',
     requireAuth,
     asyncHandler(async (req, res, next) => {
-      const reviewDataObj = req.body.review;
-      if (req.user.id !== reviewDataObj.userId) {
-        return next(serverError(401, 'Review creating failed', ["Unauthorized user"]));
-      }
-      reviewDataObj.type = 0;
-      //TODO: implement backend review validation before attempting to create a row in database
-      try{
-        const review = await Review.create(reviewDataObj);
-        res.json({ review });
-      } catch (error) {
-        return next(serverError(401, 'Review creating failed', ["Could not create review"]));
-      }
-    })
-  );
+      const{startReview, spotId, userId} = req.body;
+      const review = await Review.create({
+        userId: Number(userId),
+        spotId: Number(spotId),
+        head: startReview.head,
+        body: startReview.body,
+        threeRating: Number(startReview.threeRating),
+        publicVote: Number(startReview.publicVote)
+      });
+      const spots = await spots.findAll({
+        include: [Review]
+      });
+
+      return res.json({ review });
+
+}));
 
   module.exports = router;

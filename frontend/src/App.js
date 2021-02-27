@@ -4,10 +4,12 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import SpotsPage from "./components/spot";
+import ReviewForm from './components/ReviewForm'
 import * as sessionActions from "./store/session";
-
+import Home from './components/Home'
 import Navigation from "./components/Navigation";
 import './index.css'
+
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +21,9 @@ function App() {
 
 
   return (
-    <div className='page'>
+    <div className="back2">
       <Navigation isLoaded={isLoaded} />
+      <Home />
       {isLoaded && (
         <Switch>
           <Route path="/signup">
@@ -32,9 +35,13 @@ function App() {
           <Route path="/spots">
             <SpotsPage />
           </Route>
+          <Route path="/reviews/spots">
+            <ReviewForm />
+          </Route>
+
         </Switch>
       )}
-      
+
     </div>
   );
 }

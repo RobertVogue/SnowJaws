@@ -22,9 +22,10 @@ module.exports = {
         allowNull: false,
         defaultValue: 1
       },
-      URL: {
-        type: Sequelize.TEXT,
+      urlLink: {
+        type: Sequelize.INTEGER,
         allowNull: true,
+        defaultValue: 0,
       },
       tracker: {
         type: Sequelize.ARRAY(Sequelize.DOUBLE),
