@@ -14,7 +14,6 @@ function Navigation({ isLoaded }){
     authLinks = (
       <>
       <NavLink className="link" to="/spots"> Spots</NavLink>
-      <NavLink className="link" to="/reviews"> Reviews</NavLink>
       </>
     )
   }
@@ -35,6 +34,7 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='outer'>
+                <div className="w5"></div>
                 <NavLink className="link" exact to="/">Home</NavLink>
                 {authLinks}
                 {isLoaded && sessionLinks}

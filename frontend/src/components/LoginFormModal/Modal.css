@@ -23,6 +23,7 @@
 .link2:hover {
     cursor: pointer;
     border-bottom: 3px solid rgb(0, 162, 255);
+    background-color: white;
 }
 .outerbest {
     padding: 5%;

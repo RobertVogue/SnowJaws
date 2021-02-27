@@ -1,16 +1,12 @@
 import {Switch, Route} from 'react-router-dom';
-import ReviewForm from "../ReviewForm";
-import SpotsPage from '../spot'
+import SplashPage from './Splash'
 
 function Home() {
 
     return (
       <Switch>
         <Route exact path='/'>
-          <SpotsPage />
-        </Route>
-        <Route  path='/spots/:spotId/review' >
-          <ReviewForm />
+          <SplashPage />
         </Route>
       </Switch>
     );
