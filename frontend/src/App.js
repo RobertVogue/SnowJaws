@@ -9,6 +9,7 @@ import * as sessionActions from "./store/session";
 import Home from './components/Home'
 import Navigation from "./components/Navigation";
 import './index.css'
+import SpotPage from './components/spot/spotpage'
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/reviews/spots">
             <ReviewForm />
+          </Route>
+          <Route path="/spot/:id">
+            <SpotPage />
           </Route>
 
         </Switch>

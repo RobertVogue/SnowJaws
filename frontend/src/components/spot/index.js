@@ -30,12 +30,20 @@ const SpotsPage = () => {
         return state.spot
     })
     function handleReviewClick(e) {
+        if (sessionUser) {
         history.push(`/reviews/spots/${e.target.id}`);
+        } else {
+            history.push('/signup')
+        }
       }
+    function handlePicClick(e) {
+        history.push(`/spot/${e.target.id}`)
+    }
+
     function handlePics(id) {
         const idx = id%superArray.length
         return superArray[idx]
-
+    }
 
         // setPic(`pic${id.target.id}`)
         // if (pic0 == pic) return pic0
@@ -49,7 +57,7 @@ const SpotsPage = () => {
         // else if (pic8 == pic) return pic8
         // else if (pic9 == pic) return pic9
         // else return pic0
-    }
+
 
 useEffect(() => {
     dispatch(FetchSpots());
@@ -59,12 +67,9 @@ if(!sessionUser) return <Redirect to="/signup" />
 // const bgStyle = {backgroundImage: `url(${handlePics()})`}
 return (
     <div id="spots-page">
-       <div className="title">
-            <h1>SnowJaws Spot List</h1>
-       </div>
        <div className='spotList'>
             {spots.map(spot =>
-                <div className="list" id={spot.id} style={{backgroundImage: `url(${handlePics(spot.id)})`}}>
+                <div className="list" id={spot.id} onClick={handlePicClick} style={{backgroundImage: `url(${handlePics(spot.id)})`}}>
                     <h4 className="w6">{spot.head}</h4>
                         <div className="row2">
                             <button className='button4'>Book</button>
@@ -73,7 +78,7 @@ return (
                         <div className="row">
                             <p>{spot.firstAddress} {spot.secondAddress} {spot.city}, {spot.state}, {spot.country} {spot.zip}</p>
                         </div>
-                        <p className='tiny'>{spot.body}</p>
+                        <p className='tiny hide-scollbar'>{spot.body}</p>
                 </div>
                     )}
        </div>

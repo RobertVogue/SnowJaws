@@ -1,17 +1,30 @@
 import csrfFetch from './csrf';
 const SPOTS = 'spot/setSpots';
+const SINGLE = 'spot/singleSpot'
 const SPOTREVIEW = 'spots/SPOTREVIEW'
 const setSpots = (spot) => ({
     type: SPOTS,
     spot
 
 });
+const singleSpot = (sing) => ({
+    type: SINGLE,
+    payload: sing
+})
 
 export const FetchSpots = () => {
     return async (dispatch) => {
         const res = await csrfFetch('/api/spots')
         const data = await res.json()
         dispatch(setSpots(data.spots))
+        return data
+    }
+}
+export const fetchSingleSpot = (id) => {
+    return async (dispatch) => {
+        const res = await csrfFetch(`api/spots/${id}`);
+        const data = await res.json()
+        dispatch(singleSpot(data.spot))
         return data
     }
 }
@@ -38,6 +51,8 @@ export default function spotReducer (state = alpha, action) {
                 ...state,
                 reviews: action.reviews
             }
+        case SINGLE:
+            return {...state, [action.payload.id]: action.payload};
         default:
             return state;
     }

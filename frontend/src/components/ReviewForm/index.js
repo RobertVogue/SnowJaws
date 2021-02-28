@@ -22,19 +22,7 @@ const ReviewForm = () => {
     dispatch(FetchSpots());
     }, [dispatch]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const startReview = {
-            head,
-            body,
-            threeRating,
-            publicVote
-        };
-        if (startReview) {
-            let userId = sessionUser.id;
-            dispatch(addReview(startReview, spotId, userId));
-
-        }
+    const handleSubmit = async () => {
         history.push(`/spots/`);
     };
 
