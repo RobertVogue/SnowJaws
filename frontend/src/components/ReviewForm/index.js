@@ -27,7 +27,7 @@ const ReviewForm = () => {
     };
 
     return (
-        <div className="back">
+        <div className="back3">
             <div className ='front'>
             <form>
                 <div>

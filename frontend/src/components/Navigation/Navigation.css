@@ -32,6 +32,20 @@
 
 
 }
+.first {
+    text-decoration: none;
+    color: rgb(0, 53, 13);
+    height: 2vh;
+    margin-top: 15px;
+    width: 75px;
+    text-align: center;
+    font-weight: bolder;
+    margin-right: 1400px;
+    font-size: 25px;
+}
+.first:hover {
+    cursor: pointer;
+}
 .w5 {
     background-image: url('../../images/favicon.png');
 }

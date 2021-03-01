@@ -1,7 +1,6 @@
 .main-spot-page {
     display: flex;
-    background-size: 150% 250%;
-    animation: hard 100s ease-in-out infinite;
+    background-size: cover;
     align-items: center;
     flex-direction: column;
     justify-content: center;

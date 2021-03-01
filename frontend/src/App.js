@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Navigation from "./components/Navigation";
 import './index.css'
 import SpotPage from './components/spot/spotpage'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
         </Switch>
       )}
+      <Footer />
 
     </div>
   );

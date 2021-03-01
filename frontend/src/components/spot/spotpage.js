@@ -61,6 +61,9 @@ function SpotPage() {
                 <div className="box-description">
                     <p>{singleSpot.body}</p>
                 </div>
+                <div className="box-rating">
+                    <p>{singleSpot.threeRating}</p>
+                </div>
                 <div className="box-review"></div>
                     <p>{singleSpot.review}</p>
             </div>

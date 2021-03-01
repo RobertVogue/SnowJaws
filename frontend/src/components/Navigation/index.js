@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -8,6 +8,12 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
+
+
+  function handlePicClick() {
+    history.push(`/`)
+}
 
   let authLinks;
   if (sessionUser) {
@@ -34,10 +40,10 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='outer'>
-                <div className="w5"></div>
-                <NavLink className="link" exact to="/">Home</NavLink>
-                {authLinks}
-                {isLoaded && sessionLinks}
+      <p className='first' onClick={handlePicClick}>SnowJaws</p>
+      <NavLink className="link" exact to="/">Home</NavLink>
+      {authLinks}
+      {isLoaded && sessionLinks}
     </div>
 
   );

@@ -5,7 +5,7 @@ import { FetchSpots } from '../../store/spot';
 import ReviewForm from '../ReviewForm'
 import pic1 from '../../images/pic1.jpg';
 import pic2 from '../../images/pic2.jpg';
-import pic3 from '../../images/pic3.jpg';
+import pic3 from '../../images/pic3.png';
 import pic4 from '../../images/pic4.jpg';
 import pic5 from '../../images/pic5.jpg';
 import pic6 from '../../images/pic6.jpg';
@@ -69,16 +69,15 @@ return (
     <div id="spots-page">
        <div className='spotList'>
             {spots.map(spot =>
-                <div className="list" id={spot.id} onClick={handlePicClick} style={{backgroundImage: `url(${handlePics(spot.id)})`}}>
+                <div className="spotBox">
                     <h4 className="w6">{spot.head}</h4>
-                        <div className="row2">
-                            <button className='button4'>Book</button>
-                            <button onClick={handleReviewClick} id={spot.id} className='button4'>Review</button>
-                        </div>
-                        <div className="row">
-                            <p>{spot.firstAddress} {spot.secondAddress} {spot.city}, {spot.state}, {spot.country} {spot.zip}</p>
-                        </div>
-                        <p className='tiny hide-scollbar'>{spot.body}</p>
+                    <div className="list" id={spot.id} onClick={handlePicClick} style={{backgroundImage: `url(${handlePics(spot.id)})`}}></div>
+                    <div className="row2">
+                        <button className='button4'>Book</button>
+                        <button onClick={handleReviewClick} id={spot.id} className='button4'>Review</button>
+                    </div>
+                    <h4 className="w7">{spot.firstAddress} {spot.secondAddress} {spot.city}, {spot.state}, {spot.country} {spot.zip}</h4>
+                    <p className='tiny hide-scollbar'>{spot.body}</p>
                 </div>
                     )}
        </div>
