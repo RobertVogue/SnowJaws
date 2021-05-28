@@ -33,3 +33,7 @@ Snowjaws is a clone of HipCamp. The Difference is it was designed to book and re
 <p align="center">
   <img src="Readme-Assets/cats.png">
 </p>
+
+# Conclusion
+
+I really enjoyed making this clone, It easy to navigate through. This was my first project with introduction to React and Redux. I'm happy with the end result and am looking forward to tinkering with it more.
