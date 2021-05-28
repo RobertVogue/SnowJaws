@@ -4,4 +4,32 @@ Snowjaws is a clone of HipCamp. The Difference is it was designed to book and re
 
 # Features
 
-## 1. Login 
+## 1. Login Page with preconfigured Demo user Login
+
+<p align="center">
+  <img src="Readme-Assets/snowlogin.png">
+</p>
+
+## 2. Spot Page to Discover places to Ski
+
+<p align="center">
+  <img src="Readme-Assets/spotspage.png">
+</p>
+
+## 3. Review Any Resort
+
+<p align="center">
+  <img src="Readme-Assets/Review.png">
+</p>
+
+## 4. Clickable Spots for easy access
+
+<p align="center">
+  <img src="Readme-Assets/individual.png">
+</p>
+
+## 5. Categories to find matching Resorts
+
+<p align="center">
+  <img src="Readme-Assets/cats.png">
+</p>
