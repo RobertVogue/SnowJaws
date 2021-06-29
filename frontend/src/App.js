@@ -11,6 +11,8 @@ import Navigation from "./components/Navigation";
 import './index.css'
 import SpotPage from './components/spot/spotpage'
 import Footer from './components/Footer'
+import ChatPage from './components/chatpage/chat'
+
 
 
 function App() {
@@ -42,6 +44,9 @@ function App() {
           </Route>
           <Route path="/spot/:id">
             <SpotPage />
+          </Route>
+          <Route path="/chat">
+            <ChatPage />
           </Route>
 
         </Switch>
