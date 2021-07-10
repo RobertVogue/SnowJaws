@@ -20,6 +20,7 @@ function Navigation({ isLoaded }){
     authLinks = (
       <>
       <NavLink className="link" to="/spots"> Spots</NavLink>
+      <NavLink className="link" to="/chat"> ChatRoom</NavLink>
       </>
     )
   }
